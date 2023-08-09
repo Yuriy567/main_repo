@@ -17,3 +17,11 @@ class ArgumentError(Exception):
             указан неверный диапазон: конечная граница меньше начальной, попробуйте ещё раз"""
 
         }
+
+class ParametersError(Exception):
+    def __init__(self, error_type):
+        self.error_type = error_type
+        self.message = self._get_error_messages()
+
+    def _get_error_messages(self):
+        error_messages = {}
